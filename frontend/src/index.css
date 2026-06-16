@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #5b0024;
+  --color-deep-burgundy: #810B38;
+  --color-crimson: #8B1A2B;
+  --color-cream-surface: #F1E2D1;
+  --color-surface: #EDE5D8;
+  --color-background: #F5EFE6;
+  --color-on-surface: #221a10;
+  --color-on-surface-variant: #574145;
+  --color-light-tan: #DCC3AA;
+  --color-outline-variant: #ddbfc3;
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-ui: "Inter", sans-serif;
+  --font-data: "JetBrains Mono", monospace;
+
+  --spacing-margin-desktop: 64px;
+  --spacing-unit: 4px;
+}
+
+@layer base {
+  body {
+    background-color: #F5EFE6;
+    background-image: radial-gradient(#DCC3AA 1px, transparent 1px);
+    background-size: 24px 24px;
+    font-family: 'Inter', sans-serif;
+    color: #221a10;
+  }
+}
+
+.terminal-cursor::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.teletype-line {
+  opacity: 0;
+  transform: translateY(4px);
+  animation: reveal 0.2s forwards;
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #EDE5D8;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #8B1A2B;
+  border-radius: 3px;
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: white !important; overflow: visible !important; }
+}
