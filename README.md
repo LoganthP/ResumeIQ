@@ -1,25 +1,38 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LoganthP/ResumeIQ/main/assets/banner.png" alt="ResumeIQ Banner" width="100%">
+  <img src="assets/hero.png" alt="ResumeIQ Banner" width="100%">
 </p>
 
-<h1 align="center">🚀 ResumeIQ</h1>
+<h1 align="center">
+ResumeIQ
+</h1>
 
-<p align="center">
+<h3 align="center">
 AI-Powered Resume Analyzer, ATS Optimizer & Resume Rewriter
+</h3>
+
+<br>
+
+<p align="center">
+
+![AI](https://img.shields.io/badge/AI-Powered-FF4B4B?style=for-the-badge)
+
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript)
+
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python)
+
+![OpenRouter](https://img.shields.io/badge/OpenRouter-LLM-orange?style=for-the-badge)
+
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/React-19-61DAFB?logo=react" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/FastAPI-0.116-009688?logo=fastapi" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/OpenRouter-AI-orange" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/License-MIT-green" /></a>
+Parse • Analyze • Optimize • Rewrite • Export
 </p>
 
-<p align="center">
-  Parse • Analyze • Optimize • Rewrite • Export
-</p>
+<br>
 
 ## 🎯 Overview
 
