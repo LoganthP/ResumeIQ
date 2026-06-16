@@ -197,26 +197,6 @@ flowchart LR
     J --> K
 ```
 ---
-## 📤 Export Pipeline
-
-```mermaid
-flowchart TB
-
-    Analysis[Analysis Result]
-
-    Analysis --> PDF[PDF Generator]
-
-    Analysis --> PNG[PNG Snapshot]
-
-    Analysis --> JSON[JSON Export]
-
-    Analysis --> MD[Markdown Export]
-
-    Analysis --> TXT[Text Export]
-
-    Analysis --> CSV[CSV Export]
-```
----
 ## 📁 Project Structure
 
 ```text
