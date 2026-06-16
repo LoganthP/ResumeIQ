@@ -1,168 +1,505 @@
-# ResumeIQ - AI Resume Analyzer & Optimizer
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LoganthP/ResumeIQ/main/assets/banner.png" alt="ResumeIQ Banner" width="100%">
+</p>
 
-ResumeIQ is a professional, production-ready web application that parses, analyzes, and optimizes developer resumes against target job descriptions. By integrating with OpenRouter, ResumeIQ performs a comprehensive ATS (Applicant Tracking Systems) style compatibility check and provides detailed improvement suggestions, keyword matches, and a fully rewritten, optimized resume draft.
+<h1 align="center">🚀 ResumeIQ</h1>
+
+<p align="center">
+AI-Powered Resume Analyzer, ATS Optimizer & Resume Rewriter
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/React-19-61DAFB?logo=react" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/FastAPI-0.116-009688?logo=fastapi" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/OpenRouter-AI-orange" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/License-MIT-green" /></a>
+</p>
+
+<p align="center">
+  Parse • Analyze • Optimize • Rewrite • Export
+</p>
+
+## 🎯 Overview
+
+ResumeIQ is a production-ready AI-powered platform that helps software engineers and professionals optimize resumes for specific job descriptions.
+
+The system performs:
+
+- ATS Compatibility Analysis
+- Resume-to-JD Matching
+- Skill Gap Detection
+- Keyword Analysis
+- Resume Rewriting
+- Professional Recommendation Generation
+- Multi-format Report Exporting
+Powered by OpenRouter and modern LLMs including Gemini, Claude, and GPT models.
+---
+---
+## ✨ Core Features
+
+### 📄 Intelligent Resume Parsing
+
+- PDF Upload Support
+- Instant Text Extraction
+- Metadata Detection
+
+### 🎯 ATS Compatibility Analysis
+
+- Match Score Generation
+- Keyword Coverage
+- Recruiter Readability Evaluation
+
+### 🤖 AI Resume Optimization
+
+- Section Rewrite Suggestions
+- Professional Improvements
+- Skill Enhancement Recommendations
+
+### 🔍 Gap Analysis
+
+- Missing Skills Detection
+- Missing Keywords
+- Weak Section Identification
+
+### 📝 AI Resume Rewriter
+
+- Complete Resume Redrafting
+- ATS Optimized Formatting
+- Context-Aware Improvements
+
+### 📊 Workspace & History
+
+- Local Analysis Storage
+- Search and Filter
+- Quick Reopen
+
+### 📤 Advanced Exporting
+
+- PDF Reports
+- PNG Snapshots
+- Markdown
+- JSON
+- CSV
+- TXT
+- Multi-format Report Exporting
+
+Powered by OpenRouter and modern LLMs including Gemini, Claude, and GPT models.
+---
+## 🛠 Technology Stack
+
+### Frontend
+
+| Technology | Purpose |
+|------------|----------|
+| React 19 | UI Framework |
+| TypeScript | Type Safety |
+| Vite | Build Tool |
+| Tailwind CSS | Styling |
+| html2canvas | Snapshot Generation |
+| jsPDF | PDF Export |
+| Lucide React | Icons |
+
+### Backend
+
+| Technology | Purpose |
+|------------|----------|
+| FastAPI | REST API |
+| Python 3.11 | Runtime |
+| Pydantic | Validation |
+| PyPDF2 | PDF Parsing |
+| HTTPX | API Communication |
+| OpenAI SDK | OpenRouter Integration |
+
+### AI Layer
+
+| Service | Usage |
+|----------|---------|
+| OpenRouter | Unified AI Gateway |
+| Gemini 2.5 Flash | Fast Analysis |
+| Claude 3.5 Sonnet | Detailed Reasoning |
+| GPT Models | Alternative Analysis |
 
 ---
-
-## 🚀 Key Features
-
-- **PDF Parsing**: Instant text extraction from uploaded PDF resumes.
-- **Tailored AI Analysis**: Evaluates resume match score, identifies professional strengths, lists critical gaps/weaknesses, and identifies matching vs. missing keywords.
-- **Actionable Optimization Advice**: Delivers section-specific rewrite recommendations to improve ATS compatibility.
-- **AI-Rewritten Draft**: Generates a complete, tailored resume draft incorporating all recommended changes while preserving authentic user experiences.
-- **Model Selector**: Allows selection between various LLMs (e.g., Gemini 2.5 Flash, Claude 3.5 Sonnet, etc.) via OpenRouter.
-- **Analysis Workspace & History**: Save, search, filter, and revisit past analyses locally in a workspace environment.
-- **Configurable Export Options (Modal)**:
-  - **PDF Report**: High-quality document export with section-level filters (Analysis Summary, Match Score, Strengths, Weaknesses, Recommendations, Improved Resume, Skills Breakdown, Resume Metadata, Job Description Metadata, AI Model Info) and quality options.
-  - **PNG Snapshot**: Capture specific components or the entire analysis page as high-res images (1080p, 2K, 4K).
-  - **Structured Data Export**: Download raw data in JSON, Markdown (MD), plain text (TXT), or recommendations in CSV format.
-
----
-
-## 🛠️ System Design & Architecture
-
-ResumeIQ consists of a decoupled frontend and backend service:
-
-### Architectural Components
-1. **Frontend (SPA)**:
-   - Built with **React**, **Vite**, and **TypeScript**.
-   - Styled using modern **Tailwind CSS** with responsive layout patterns.
-   - Core libraries: `html2canvas` for snapshot generation, `jspdf` for PDF construction, and `lucide-react` for icon design.
-   - **Local Storage**: Acts as a client-side database to persist analysis history and metadata.
-2. **Backend (API)**:
-   - Built with **FastAPI** (Python).
-   - Core libraries: `pypdf` / `PyPDF2` (for PDF parsing), `httpx` and `openai` (for OpenRouter API requests), and `pydantic` (for input/output validation).
-   - Configured with CORS middleware for secure communication with the frontend.
-
-### Component Relationship Flow
+## 🏗 System Architecture
 
 ```mermaid
-graph TD
-    User([User]) -->|Uploads Resume + JD| FE[React Frontend]
-    FE -->|Parses/Saves History| LS[(Local Storage)]
-    FE -->|POST /api/analyze| BE[FastAPI Backend]
-    BE -->|Extracts Text| PDFP[PDF Parser]
-    BE -->|Queries LLM| OR[OpenRouter API]
-    OR -->|Returns JSON Schema| BE
-    BE -->|Returns AnalysisResponse| FE
-    FE -->|Generates Snapshot| Canvas[html2canvas]
-    Canvas -->|Compiles PDF/PNG| JS[jsPDF]
-    JS -->|Downloads File| User
+graph TB
+
+    User([👤 User])
+
+    subgraph Frontend
+        UI[React + TypeScript]
+        Store[(Local Storage)]
+        Export[Export Engine]
+    end
+
+    subgraph Backend
+        API[FastAPI Server]
+        Parser[PDF Parser]
+        Validator[Pydantic Models]
+    end
+
+    subgraph AI
+        OpenRouter[OpenRouter API]
+        LLMs[Gemini / Claude / GPT]
+    end
+
+    User --> UI
+
+    UI --> Store
+
+    UI --> API
+
+    API --> Parser
+
+    API --> Validator
+
+    API --> OpenRouter
+
+    OpenRouter --> LLMs
+
+    LLMs --> API
+
+    API --> UI
+
+    UI --> Export
+```
+---
+## 🔄 Resume Analysis Workflow
+
+```mermaid
+flowchart LR
+
+    A[Upload Resume PDF]
+    B[Extract Resume Text]
+    C[Paste Job Description]
+    D[Send Analysis Request]
+    E[OpenRouter AI Analysis]
+    F[ATS Score Calculation]
+    G[Gap Detection]
+    H[Keyword Matching]
+    I[Recommendations]
+    J[Resume Rewriting]
+    K[Export Results]
+
+    A --> B
+    B --> D
+    C --> D
+    D --> E
+
+    E --> F
+    E --> G
+    E --> H
+
+    F --> I
+    G --> I
+    H --> I
+
+    I --> J
+    J --> K
+```
+---
+## 📤 Export Pipeline
+
+```mermaid
+flowchart TB
+
+    Analysis[Analysis Result]
+
+    Analysis --> PDF[PDF Generator]
+
+    Analysis --> PNG[PNG Snapshot]
+
+    Analysis --> JSON[JSON Export]
+
+    Analysis --> MD[Markdown Export]
+
+    Analysis --> TXT[Text Export]
+
+    Analysis --> CSV[CSV Export]
+```
+---
+## 📁 Project Structure
+
+```text
+ResumeIQ/
+│
+├── backend/
+│   │
+│   ├── analyzer.py               # AI analysis engine
+│   ├── parser.py                 # PDF text extraction
+│   ├── models.py                 # Pydantic schemas
+│   ├── main.py                   # FastAPI application entry
+│   ├── requirements.txt          # Python dependencies
+│   ├── Dockerfile                # Backend container
+│   ├── .env.example              # Environment template
+│   └── .env                      # Local environment variables
+│
+├── frontend/
+│   │
+│   ├── public/
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── api/
+│   │   │   └── resumeApi.ts
+│   │   │
+│   │   ├── assets/
+│   │   │   ├── hero.png
+│   │   │   ├── react.svg
+│   │   │   └── vite.svg
+│   │   │
+│   │   ├── components/
+│   │   │   ├── ExportModal.tsx
+│   │   │   ├── Header.tsx
+│   │   │   ├── ImprovementCard.tsx
+│   │   │   ├── Loader.tsx
+│   │   │   ├── ModelSelector.tsx
+│   │   │   ├── ResultPanel.tsx
+│   │   │   ├── ResumeCharts.tsx
+│   │   │   ├── ScoreCard.tsx
+│   │   │   └── UploadZone.tsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.tsx
+│   │   │   ├── AnalysisDetail.tsx
+│   │   │   └── HistoryWorkspace.tsx
+│   │   │
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── utils/
+│   │   │   └── history.ts
+│   │   │
+│   │   ├── App.tsx
+│   │   ├── App.css
+│   │   ├── main.tsx
+│   │   └── index.css
+│   │
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.ts
+│   ├── tsconfig.json
+│   ├── tsconfig.app.json
+│   ├── tsconfig.node.json
+│   ├── eslint.config.js
+│   ├── Dockerfile
+│   └── README.md
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md
+```
+---
+# 🚀 Quick Start
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/LoganthP/ResumeIQ.git
+cd ResumeIQ
+```
+---
+
+# ⚙️ Environment Configuration
+
+Create a `.env` file inside the `backend/` directory:
+
+```env
+OPENROUTER_API_KEY="your_openrouter_key_here"
+OPENROUTER_MODEL=google/gemini-2.5-flash
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+
+APP_SITE_URL=http://localhost:5173
+APP_SITE_NAME=ResumeIQ
+```
+
+> Replace `your_openrouter_key_here` with your actual OpenRouter API key.
+
+---
+
+# 🔧 Backend Setup
+
+Navigate to the backend directory:
+
+```bash
+cd backend
+```
+
+### Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Activate Virtual Environment
+
+#### Windows (PowerShell)
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+#### Windows (Command Prompt)
+
+```cmd
+venv\Scripts\activate.bat
+```
+
+#### macOS / Linux
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Create Environment File
+
+#### Windows (Command Prompt)
+
+```cmd
+copy .env.example .env
+```
+
+#### Windows (PowerShell) / macOS / Linux
+
+```bash
+cp .env.example .env
+```
+
+Update the `.env` file with your OpenRouter API key.
+
+### Start Backend Server
+
+```bash
+uvicorn main:app --reload
+```
+
+### Backend URLs
+
+```text
+Backend API:
+http://localhost:8000
+
+Swagger Documentation:
+http://localhost:8000/docs
 ```
 
 ---
 
-## ⚙️ Prerequisites
+## ⚡ Quick Backend Start (Windows)
 
-- **Node.js**: `v18+`
-- **Python**: `v3.11+`
-- **Docker & Docker Compose** (Optional, for containerized setup)
-- **OpenRouter API Key** (Get one at [openrouter.ai](https://openrouter.ai/))
-
----
-
-## 📦 Installation & Setup
-
-### Backend Setup
-
-1. **Navigate to the backend directory**:
-   ```bash
-   cd backend
-   ```
-2. **Create and activate a virtual environment**:
-   ```bash
-   python -m venv venv
-   # On Windows (PowerShell):
-   .\venv\Scripts\Activate.ps1
-   # On macOS/Linux:
-   source venv/bin/activate
-   ```
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. **Configure Environment Variables**:
-   Create a `.env` file from the example:
-   ```bash
-   cp .env.example .env
-   ```
-   Open `.env` and fill in your API Key and configure details:
-   ```env
-   OPENROUTER_API_KEY=your_openrouter_api_key_here
-   OPENROUTER_MODEL=google/gemini-2.5-flash
-   OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
-   APP_SITE_URL=http://localhost:5173
-   APP_SITE_NAME=ResumeIQ
-   ALLOWED_ORIGINS=http://localhost:5173
-   ```
-5. **Start the FastAPI server**:
-   ```bash
-   uvicorn main:app --reload
-   ```
-   The backend API will run at `http://localhost:8000`.
-
-### Frontend Setup
-
-1. **Navigate to the frontend directory**:
-   ```bash
-   cd ../frontend
-   ```
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-3. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-   The frontend application will run at `http://localhost:5173`.
+```powershell
+cd backend
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
 ---
 
-## 🐳 Running with Docker Compose
+# 🎨 Frontend Setup
 
-To run the entire application stack in containerized mode:
+Open a new terminal window:
 
-1. **Configure Backend Environment**:
-   Ensure `backend/.env` is set up with your `OPENROUTER_API_KEY`.
-2. **Start the containers**:
-   ```bash
-   docker-compose up --build
-   ```
-3. **Access Services**:
-   - Frontend UI: `http://localhost:5173`
-   - Backend API Docs: `http://localhost:8000/docs`
+```bash
+cd frontend
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Frontend URL
+
+```text
+http://localhost:5173
+```
+---
+
+# 🌐 Application Endpoints
+
+| Service | URL |
+|----------|-----|
+| Frontend | http://localhost:5173 |
+| Backend API | http://localhost:8000 |
+| API Documentation | http://localhost:8000/docs |
 
 ---
 
-## 🌐 Environment Variables Configuration
+# 🐳 Docker Setup
 
-### Backend `.env` Variables
+### Build and Run
 
-| Variable | Description | Default / Example |
-| -------- | ----------- | ----------------- |
-| `OPENROUTER_API_KEY` | Your OpenRouter API Access Token | `sk-or-v1-xxxx...` |
-| `OPENROUTER_MODEL` | The default LLM to query | `google/gemini-2.5-flash` |
-| `OPENROUTER_BASE_URL` | Base API URL for OpenRouter | `https://openrouter.ai/api/v1` |
-| `APP_SITE_URL` | Site URL passed to OpenRouter headers | `http://localhost:5173` |
-| `APP_SITE_NAME` | Site title passed to OpenRouter headers | `ResumeIQ` |
-| `ALLOWED_ORIGINS` | Comma-separated list of permitted CORS origins | `http://localhost:5173` |
+```bash
+docker-compose up --build
+```
+
+### Run in Detached Mode
+
+```bash
+docker-compose up -d
+```
+
+### Stop Containers
+
+```bash
+docker-compose down
+```
+
+### Access Services
+
+| Service | URL |
+|----------|-----|
+| Frontend | http://localhost:5173 |
+| Backend API | http://localhost:8000 |
+| API Documentation | http://localhost:8000/docs |
+
+---
+## 🛣️ Roadmap
+
+### Planned Features
+
+- [ ] User Authentication
+- [ ] Cloud-Based Analysis History
+- [ ] Resume Version Comparison
+- [ ] Cover Letter Generator
+- [ ] LinkedIn Profile Analysis
+- [ ] Multi-Resume Management
+- [ ] Team Collaboration Workspace
+- [ ] ATS Simulation Engine
+- [ ] One-Click Resume Export Templates
 
 ---
 
-## 🚀 Deployment Guide (Render)
+## 🛣️ Future Enhancements
 
-This application is ready for deployment on **Render** as a web service (backend) and a static site (frontend).
-
-### 1. Backend Web Service
-- **Environment**: `Python`
-- **Root Directory**: `backend`
-- **Build Command**: `pip install -r requirements.txt`
-- **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-- **Environment Variables**: Add `OPENROUTER_API_KEY` and set `ALLOWED_ORIGINS` to your deployed Frontend URL.
-
-### 2. Frontend Static Site
-- **Environment**: `Node`
-- **Root Directory**: `frontend`
-- **Build Command**: `npm install && npm run build`
-- **Publish Directory**: `dist`
+- [ ] AI Cover Letter Generator
+- [ ] LinkedIn Profile Analysis
+- [ ] Resume Section-Level Scoring
+- [ ] ATS Formatting Validation
+- [ ] Resume Version Comparison
+- [ ] Cloud-Based Analysis History
+- [ ] User Authentication & Profiles
+- [ ] GitHub Profile Integration
+- [ ] AI Interview Preparation Assistant
+- [ ] Personalized Career Recommendations
+- [ ] Job Match Prediction
+- [ ] Smart Resume Templates
