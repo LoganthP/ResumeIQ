@@ -1,38 +1,25 @@
 <div align="center">
 
-<img src="frontend/src/assets/hero.png" width="100%" alt="ResumeIQ Banner">
-
-<br><br>
+<img src="frontend/src/assets/hero.png" alt="ResumeIQ Banner" height="250">
 
 # 🚀 ResumeIQ
 
 ### AI-Powered Resume Analyzer, ATS Optimizer & Resume Rewriter
 
-<br>
-
+<p>
 <img src="https://img.shields.io/badge/AI-POWERED-FF4B4B?style=for-the-badge">
-
 <img src="https://img.shields.io/badge/REACT-FRONTEND-61DAFB?style=for-the-badge">
-
 <img src="https://img.shields.io/badge/FASTAPI-BACKEND-009688?style=for-the-badge">
-
 <img src="https://img.shields.io/badge/TYPESCRIPT-5.8-3178C6?style=for-the-badge">
-
 <img src="https://img.shields.io/badge/PYTHON-3.11-3776AB?style=for-the-badge">
+<img src="https://img.shields.io/badge/OPENROUTER-LLM-orange?style=for-the-badge">
+</p>
 
-<br><br>
-
-### Parse • Analyze • Optimize • Rewrite • Export
+**Parse • Analyze • Optimize • Rewrite • Export**
 
 </div>
 
 ---
-
-<p align="center">
-Parse • Analyze • Optimize • Rewrite • Export
-</p>
-
-<br>
 
 ## 🎯 Overview
 
