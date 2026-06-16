@@ -2,7 +2,7 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0F172A&height=260&section=header&text=ResumeIQ&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI-Powered%20Resume%20Analyzer%20%7C%20ATS%20Optimizer%20%7C%20Resume%20Rewriter&descAlignY=58&descAlign=50">
 
-<br><br>
+<br>
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI-POWERED-FF4B4B?style=for-the-badge" />
