@@ -13,8 +13,6 @@
   <img src="https://img.shields.io/badge/OPENROUTER-LLM-orange?style=for-the-badge" />
 </p>
 
-<br>
-
 ### Parse • Analyze • Optimize • Rewrite • Export
 
 </div>
