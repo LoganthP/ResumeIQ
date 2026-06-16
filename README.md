@@ -34,8 +34,7 @@ The system performs:
 - Resume Rewriting
 - Professional Recommendation Generation
 - Multi-format Report Exporting
-Powered by OpenRouter and modern LLMs including Gemini, Claude, and GPT models.
----
+
 ---
 ## ✨ Core Features
 
@@ -100,7 +99,7 @@ Powered by OpenRouter and modern LLMs including Gemini, Claude, and GPT models.
 | html2canvas | Snapshot Generation |
 | jsPDF | PDF Export |
 | Lucide React | Icons |
-
+---
 ### Backend
 
 | Technology | Purpose |
@@ -111,7 +110,7 @@ Powered by OpenRouter and modern LLMs including Gemini, Claude, and GPT models.
 | PyPDF2 | PDF Parsing |
 | HTTPX | API Communication |
 | OpenAI SDK | OpenRouter Integration |
-
+---
 ### AI Layer
 
 | Service | Usage |
