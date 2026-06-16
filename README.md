@@ -1,19 +1,15 @@
 <div align="center">
 
-<img src="frontend/src/assets/hero.png" alt="ResumeIQ Banner" height="250">
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=260&section=header&text=ResumeIQ&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI-Powered%20Resume%20Analyzer,%20ATS%20Optimizer%20%26%20Resume%20Rewriter&descAlignY=58&descAlign=50"/>
 
-# 🚀 ResumeIQ
+<br>
 
-### AI-Powered Resume Analyzer, ATS Optimizer & Resume Rewriter
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+<img src="https://img.shields.io/badge/FastAPI-0.116-009688?style=for-the-badge&logo=fastapi&logoColor=white">
+<img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white">
 
-<p>
-<img src="https://img.shields.io/badge/AI-POWERED-FF4B4B?style=for-the-badge">
-<img src="https://img.shields.io/badge/REACT-FRONTEND-61DAFB?style=for-the-badge">
-<img src="https://img.shields.io/badge/FASTAPI-BACKEND-009688?style=for-the-badge">
-<img src="https://img.shields.io/badge/TYPESCRIPT-5.8-3178C6?style=for-the-badge">
-<img src="https://img.shields.io/badge/PYTHON-3.11-3776AB?style=for-the-badge">
-<img src="https://img.shields.io/badge/OPENROUTER-LLM-orange?style=for-the-badge">
-</p>
+<br><br>
 
 **Parse • Analyze • Optimize • Rewrite • Export**
 
