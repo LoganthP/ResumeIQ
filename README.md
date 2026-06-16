@@ -82,7 +82,6 @@ The system performs:
 - TXT
 - Multi-format Report Exporting
 
-Powered by OpenRouter and modern LLMs including Gemini, Claude, and GPT models.
 ---
 ## 🛠 Technology Stack
 
